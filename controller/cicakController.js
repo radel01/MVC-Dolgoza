@@ -16,6 +16,7 @@ export default class cicaController{
         this.taroloELEM=$(".tartalom");
         this.model= new adatModel();
         this.#esemenyKezelo();
+
         new Cicak(this.model.getList(), this.taroloELEM);
         
 
@@ -27,6 +28,7 @@ export default class cicaController{
             console.log("gomb")
             console.log(event.detail)
             this.model.torol(event.detail)
+            new Cicak(this.model.getList(), this.taroloELEM);
         })
     }
 

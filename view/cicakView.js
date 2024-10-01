@@ -9,7 +9,7 @@ export default class Cicak{
 
         this.#LISTA=lista
         this.#szuloELEM=szuloELEM
-        //this.#szuloELEM.empty();
+        this.#szuloELEM.empty();
         this.listaKiir()
     }
 

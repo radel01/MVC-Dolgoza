@@ -20,8 +20,9 @@ export default class Cica{
         this.#index=index
         this.#cicaAdat=adat;
         this.#szuloELEM=szuloELEM;
-        this.gombELEM=$(".kiv");
+
         this.cicaKiir();
+        this.gombELEM=$(".kiv:last");
         this.gombKattint();
     }
 
