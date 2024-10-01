@@ -11,7 +11,7 @@ Saját esemény létrehozása */
 Minden rekordhoz (soronként) legyen egy gomb a sor elején, amire kattintva a terméket töröljük a listából. */
 
 export default class Cica{
-    #cicaAdat={};
+    #cicaAdat=[];
     #szuloELEM;
     #index;
 
@@ -20,30 +20,22 @@ export default class Cica{
         this.#index=index
         this.#cicaAdat=adat;
         this.#szuloELEM=szuloELEM;
-        this.gombELEM=$(".kiv:last-child");
+        this.gombELEM=$(".kiv");
         this.cicaKiir();
         this.gombKattint();
     }
-    
+
     cicaKiir() {
         this.#szuloELEM.append(
           `
-          <span class="sor">
-          
-          <li><button type="button" class="kiv btn btn-dark" >Törlés</button>${this.#cicaAdat.Id}</li>
-          </span>
-          <span class="sor">
-          <li><button type="button" class="kiv btn btn-dark" >Törlés</button>${this.#cicaAdat.db}</li>
-          </span>
-          <span class="sor">
-          <li><button type="button" class="kiv btn btn-dark" >Törlés</button>${this.#cicaAdat.nev}</li>
-          </span>
-          <span class="sor">
-          <li><button type="button" class="kiv btn btn-dark" >Törlés</button>${this.#cicaAdat.kor}</li>
-          </span>
-          <span class="sor">
-          <li><button type="button" class="kiv btn btn-dark" >Törlés</button>${this.#cicaAdat.nem}</li>
-          </span>
+          <li class="sor">
+          <button type="button" class="kiv btn btn-dark" >Törlés</button
+            <span>${this.#cicaAdat.Id}, </span>
+            <span>${this.#cicaAdat.db}, </span>
+            <span>${this.#cicaAdat.nev}, </span>
+            <span>${this.#cicaAdat.kor}, </span>
+            <span>${this.#cicaAdat.nem}</span>
+          </li>
 
         `
         );
@@ -52,6 +44,7 @@ export default class Cica{
 
     gombKattint(){
         this.gombELEM.on("click",()=>{
+            console.log(this)
             const e=new CustomEvent("katt",{detail:this.#index});
             window.dispatchEvent(e);
         })

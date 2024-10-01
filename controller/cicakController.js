@@ -15,16 +15,18 @@ export default class cicaController{
     constructor(){
         this.taroloELEM=$(".tartalom");
         this.model= new adatModel();
-        new Cicak(this.model.getList(), this.taroloELEM);
         this.#esemenyKezelo();
+        new Cicak(this.model.getList(), this.taroloELEM);
+        
 
     }
 
 
     #esemenyKezelo(){
         $(window).on("katt",(event)=>{
+            console.log("gomb")
             console.log(event.detail)
-            new Cicak(this.model.torol(event.detail), this.taroloELEM);
+            this.model.torol(event.detail)
         })
     }
 

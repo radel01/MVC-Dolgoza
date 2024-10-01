@@ -19,6 +19,7 @@ export default class adatModel{
     }
 
     torol(id){
+        
         return this.#LISTA.splice(id,1)
     }
 

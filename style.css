@@ -1,0 +1,36 @@
+main{
+    background-color: rgb(255, 231, 240);
+    padding: 40px;
+    height: 100%;
+    border-radius: 1%;
+}
+body{
+    height: 100%;
+    width: 60%;
+    margin: auto;
+}
+
+li{
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+.kiv{
+    margin-right: 30px;
+    margin-left: 10px;
+}
+li{
+    list-style-type: none;
+}
+
+@media only screen and (max-width: 760px){
+    body {
+      width:100%
+    }
+  
+  }
+@media only screen and (max-width: 448px){
+    main {
+      min-width: 445px;
+    }
+  
+  }
